@@ -1,4 +1,15 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+// site.js
 
-// Write your JavaScript code.
+// Wait for the DOM to load
+document.addEventListener("DOMContentLoaded", function () {
+    // Find all elements with class 'course-card'
+    const courseCards = document.querySelectorAll(".course-card");
+
+    // Add a click event listener to each course card
+    courseCards.forEach(card => {
+        card.addEventListener("click", function () {
+            const courseTitle = this.getAttribute("data-title") || "this course";
+            alert(`You clicked on "${courseTitle}"`);
+        });
+    });
+});
